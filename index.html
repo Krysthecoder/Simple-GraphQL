@@ -1,0 +1,47 @@
+<div style="width: 100%; height: 100%;" id='embedded-explorer'></div>
+<script src="https://embeddable-explorer.cdn.apollographql.com/_latest/embeddable-explorer.umd.production.min.js"></script> 
+<script>
+  new window.EmbeddedExplorer({
+    target: '#embedded-explorer',
+    graphRef: 'star-wars-swapi@current',
+    persistExplorerState: false,
+    initialState: {
+      document: `query ExampleQuery {
+  allPeople {
+    people {
+      name
+      birthYear
+      eyeColor
+      gender
+      hairColor
+      homeworld {
+        gravity
+        name
+      }
+      skinColor
+      species {
+        created
+        designation
+        eyeColors
+      }
+      vehicleConnection {
+        vehicles {
+          cargoCapacity
+          model
+          name
+          passengers
+        }
+      }
+    }
+  }
+}`,
+      variables: {},
+      headers: {},
+      displayOptions: {
+        showHeadersAndEnvVars: true, 
+        docsPanelState: 'open', 
+        theme: 'light',
+      },
+    },
+  });
+</script>
